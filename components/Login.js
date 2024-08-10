@@ -29,110 +29,123 @@ const Login = () => {
   };
 
   return (
-    <Box
-      sx={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        bgcolor: '#1E1E1E',
-        fontFamily: "'Roboto', sans-serif",
-      }}
-    >
-      <Stack
+    <>
+      <style jsx global>{`
+        html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          overflow-x: hidden;
+          background-color: #1E1E1E; /* Ensure background color covers entire viewport */
+        }
+      `}</style>
+
+      <Box
         sx={{
-          width: '90%',
-          maxWidth: '500px',
-          height: 'auto',
-          bgcolor: '#2E2E2E',
-          borderRadius: 8,
-          boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-          p: 3,
-          spacing: 3,
-          boxSizing: 'border-box',
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontFamily: "'Roboto', sans-serif",
+          margin: 0,
+          padding: 0,
+          overflow: 'hidden',
         }}
       >
-        <Typography
-          variant="h5"
-          color="#FFFFFF"
-          textAlign="center"
-          fontWeight={500}
-          mb={2}
-        >
-          Log In
-        </Typography>
-
-        <TextField
-          fullWidth
-          label="Email"
-          margin="normal"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          InputProps={{
-            style: {
-              backgroundColor: '#333333',
-              color: '#FFFFFF',
-              borderRadius: 8,
-              borderColor: '#555555',
-            },
-          }}
-          InputLabelProps={{
-            style: { color: '#BBBBBB' },
-          }}
-        />
-
-        <TextField
-          fullWidth
-          label="Password"
-          type="password"
-          margin="normal"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          InputProps={{
-            style: {
-              backgroundColor: '#333333',
-              color: '#FFFFFF',
-              borderRadius: 8,
-              borderColor: '#555555',
-            },
-          }}
-          InputLabelProps={{
-            style: { color: '#BBBBBB' },
-          }}
-        />
-
-        {error && <Typography color="error">{error}</Typography>}
-
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleLogin}
+        <Stack
           sx={{
-            mt: 2,
-            bgcolor: '#00BFFF',
-            color: '#000000',
+            width: '90%',
+            maxWidth: '500px',
+            bgcolor: '#2E2E2E',
             borderRadius: 8,
-            '&:hover': {
-              bgcolor: '#00FFFF',
-            },
-            transition: 'background-color 0.3s ease',
+            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+            p: 3,
+            boxSizing: 'border-box',
           }}
         >
-          Log In
-        </Button>
-
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="body2" color="#FFFFFF">
-            Don't have an account?{' '}
-            <Link href="/signup" passHref>
-              <Button variant="text" color="primary">Sign Up</Button>
-            </Link>
+          <Typography
+            variant="h5"
+            color="#FFFFFF"
+            textAlign="center"
+            fontWeight={500}
+            mb={2}
+          >
+            Log In
           </Typography>
-        </Box>
-      </Stack>
-    </Box>
+
+          <TextField
+            fullWidth
+            label="Email"
+            margin="normal"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            InputProps={{
+              style: {
+                backgroundColor: '#333333',
+                color: '#FFFFFF',
+                borderRadius: 8,
+                borderColor: '#555555',
+              },
+            }}
+            InputLabelProps={{
+              style: { color: '#BBBBBB' },
+            }}
+          />
+
+          <TextField
+            fullWidth
+            label="Password"
+            type="password"
+            margin="normal"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            InputProps={{
+              style: {
+                backgroundColor: '#333333',
+                color: '#FFFFFF',
+                borderRadius: 8,
+                borderColor: '#555555',
+              },
+            }}
+            InputLabelProps={{
+              style: { color: '#BBBBBB' },
+            }}
+          />
+
+          {error && <Typography color="error">{error}</Typography>}
+
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleLogin}
+            sx={{
+              mt: 2,
+              bgcolor: '#00BFFF',
+              color: '#000000',
+              borderRadius: 8,
+              '&:hover': {
+                bgcolor: '#00FFFF',
+              },
+              transition: 'background-color 0.3s ease',
+            }}
+          >
+            Log In
+          </Button>
+
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="body2" color="#FFFFFF">
+              Don't have an account?{' '}
+              <Link href="/signup" passHref>
+                <Button variant="text" color="primary">Sign Up</Button>
+              </Link>
+            </Typography>
+          </Box>
+        </Stack>
+      </Box>
+    </>
   );
 };
 
