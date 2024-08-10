@@ -1,3 +1,4 @@
+// not in use
 import React, { useEffect } from 'react';
 import { Button, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // Use useNavigate
@@ -47,11 +48,11 @@ const Home = () => {
         color="primary"
         onClick={handleLogout}
         sx={{
-          bgcolor: '#00FF00', // Green color
+          bgcolor: '#00FF00', 
           color: '#000000',
           borderRadius: 8,
           '&:hover': {
-            bgcolor: '#32CD32', // Different shade of green for hover
+            bgcolor: '#32CD32', 
           },
           transition: 'background-color 0.3s ease',
         }}
