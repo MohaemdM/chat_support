@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { getFirestore } from 'firebase/firestore';
 
 
-const 
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
