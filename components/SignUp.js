@@ -35,24 +35,29 @@ const SignUp = () => {
 
   return (
     <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      bgcolor="#1E1E1E"
-      fontFamily="'Roboto', sans-serif"
+      sx={{
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        bgcolor: '#1E1E1E',
+        fontFamily: "'Roboto', sans-serif",
+      }}
     >
       <Stack
-        direction="column"
-        width="500px"
-        height="700px"
-        bgcolor="#2E2E2E"
-        borderRadius={8}
-        boxShadow="0px 4px 12px rgba(0, 0, 0, 0.1)"
-        p={3}
-        spacing={3}
+        sx={{
+          width: '90%',
+          maxWidth: '500px',
+          height: 'auto',
+          bgcolor: '#2E2E2E',
+          borderRadius: 8,
+          boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+          p: 3,
+          spacing: 3,
+          mb: 3,
+        }}
       >
         <Typography
           variant="h5"
