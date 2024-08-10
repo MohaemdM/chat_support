@@ -48,7 +48,6 @@ const translations = {
   // Add more languages here
 };
 
-
 export default function Home() {
   const [messages, setMessages] = useState([
     {
@@ -151,18 +150,20 @@ export default function Home() {
       alignItems="center"
       bgcolor="#1E1E1E"
       fontFamily="'Roboto', sans-serif"
+      p={2} // Added padding for better appearance on mobile
     >
       <Stack
         direction="column"
-        width="500px"
-        height="700px"
+        width={{ xs: '100%', sm: '90%', md: '500px' }}
+        height={{ xs: '100%', sm: '90%', md: '700px' }}
+        maxHeight="100%"
         bgcolor="#2E2E2E"
         borderRadius={8}
         boxShadow="0px 4px 12px rgba(0, 0, 0, 0.1)"
         p={3}
         spacing={3}
       >
-        <Stack direction="row" justifyContent="space-between">
+        <Stack direction="row" justifyContent="space-between" alignItems="center">
           <Button
             variant="outlined"
             color="error"
@@ -171,6 +172,7 @@ export default function Home() {
               bgcolor: '#555555',
               color: '#FFFFFF',
               borderRadius: 8,
+              fontSize: { xs: '12px', sm: '14px', md: '16px' },
               '&:hover': {
                 bgcolor: '#FF4444',
               },
@@ -186,7 +188,8 @@ export default function Home() {
               bgcolor: '#555555',
               color: '#FFFFFF',
               borderRadius: 8,
-              minWidth: 120,
+              minWidth: 100,
+              fontSize: { xs: '12px', sm: '14px', md: '16px' },
             }}
           >
             <MenuItem value="en">English</MenuItem>
@@ -203,6 +206,7 @@ export default function Home() {
           fontWeight={500}
           mb={2}
           sx={{
+            fontSize: { xs: '20px', sm: '22px', md: '24px' },
             direction: language === 'ar' ? 'rtl' : 'ltr',
           }}
         >
@@ -241,6 +245,9 @@ export default function Home() {
                 maxWidth="70%"
                 boxShadow="0px 2px 8px rgba(0, 0, 0, 0.2)"
                 mb={1}
+                sx={{
+                  fontSize: { xs: '14px', sm: '16px', md: '18px' },
+                }}
               >
                 {message.content}
               </Box>
@@ -249,20 +256,20 @@ export default function Home() {
                message.feedback === null && 
                message.content !== translations[message.language].welcome && (
                 <Box display="flex" alignItems="center" mt={1}>
-                  <Typography variant="body2" color="#BBBBBB" mr={1}>
+                  <Typography variant="body2" color="#BBBBBB" mr={1} sx={{ fontSize: { xs: '12px', sm: '14px', md: '16px' } }}>
                     {translations[message.language].feedbackPrompt}
                   </Typography>
                   <IconButton
                     color="primary"
                     onClick={() => handleFeedback(index, 'like')}
-                    sx={{ color: '#00FF00' }}
+                    sx={{ color: '#00FF00', fontSize: { xs: '20px', sm: '24px' } }}
                   >
                     <ThumbUpIcon />
                   </IconButton>
                   <IconButton
                     color="secondary"
                     onClick={() => handleFeedback(index, 'dislike')}
-                    sx={{ color: '#FF0000' }}
+                    sx={{ color: '#FF0000', fontSize: { xs: '20px', sm: '24px' } }}
                   >
                     <ThumbDownIcon />
                   </IconButton>
@@ -270,7 +277,7 @@ export default function Home() {
               )}
 
               {message.feedback && (
-                <Typography variant="body2" color="#BBBBBB" mt={1}>
+                <Typography variant="body2" color="#BBBBBB" mt={1} sx={{ fontSize: { xs: '12px', sm: '14px', md: '16px' } }}>
                   {message.feedback === 'like' ? translations[message.language].like : translations[message.language].dislike}
                 </Typography>
               )}
@@ -292,10 +299,11 @@ export default function Home() {
                 color: '#FFFFFF',
                 borderRadius: 8,
                 borderColor: '#555555',
+                fontSize: { xs: '12px', sm: '14px', md: '16px' },
               },
             }}
             InputLabelProps={{
-              style: { color: '#BBBBBB' },
+              style: { color: '#BBBBBB', fontSize: { xs: '12px', sm: '14px', md: '16px' } },
             }}
             sx={{
               '& .MuiOutlinedInput-root': {
@@ -323,6 +331,7 @@ export default function Home() {
               bgcolor: '#00BFFF',
               color: '#000000',
               borderRadius: 8,
+              fontSize: { xs: '12px', sm: '14px', md: '16px' },
               '&:hover': {
                 bgcolor: '#00FFFF',
               },
