@@ -3,19 +3,15 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID
+  apiKey: "AIzaSyAcEvi1nEZfeYv0zRqt6PEQu7DyvezgAgA",
+  authDomain: "chat-support-cabc4.firebaseapp.com",
+  projectId: "chat-support-cabc4",
+  storageBucket: "chat-support-cabc4.appspot.com",
+  messagingSenderId: "78091973802",
+  appId: "1:78091973802:web:7ffcc5057be0e39c3c0cd3"
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
