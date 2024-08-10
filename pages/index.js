@@ -148,9 +148,12 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      bgcolor="#1E1E1E"
+      bgcolor="#1E1E1E" // Ensuring the background color is applied to the entire viewport
       fontFamily="'Roboto', sans-serif"
-      p={2} // Added padding for better appearance on mobile
+      p={2}
+      sx={{
+        bgcolor: '#1E1E1E', // Background color for the entire page
+      }}
     >
       <Stack
         direction="column"
