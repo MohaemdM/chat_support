@@ -6,6 +6,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase'; // Adjust the import based on your setup
+import { useRouter } from 'next/router';
 
 const translations = {
   en: {
@@ -32,29 +33,28 @@ export default function Home() {
 
   const [message, setMessage] = useState('');
   const [language, setLanguage] = useState('en');
-  const [firstName, setFirstName] = useState(''); // State for storing the user's first name
+  const [firstName, setFirstName] = useState('');
   const messagesContainerRef = useRef(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const displayName = user.displayName?.split(' ')[0];
+        setFirstName(displayName || '');
+      } else {
+        router.push('/login'); // Redirect to the login page if not authenticated
+      }
+    });
+
+    return () => unsubscribe();
+  }, [router]);
 
   useEffect(() => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
     }
   }, [messages]);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // Assuming first name is stored in the displayName field
-        const displayName = user.displayName?.split(' ')[0];
-        setFirstName(displayName || '');
-        console.log("User's first name:", displayName); // Debugging: Check if the first name is fetched
-      } else {
-        console.log("No user is signed in."); // Debugging: No user is signed in
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   const sendMessage = async () => {
     if (message.trim() === '') return;
