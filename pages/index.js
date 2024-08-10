@@ -140,7 +140,7 @@ export default function Home() {
             color="error"
             onClick={handleLogout}
             sx={{
-              bgcolor: '#FF0000',
+              bgcolor: '#555555',
               color: '#FFFFFF',
               borderRadius: 8,
               '&:hover': {
