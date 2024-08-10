@@ -18,8 +18,36 @@ const translations = {
     like: "Like",
     dislike: "Dislike",
   },
-  // other languages...
+  es: {
+    welcome: "¡Hola! Soy tu entrevistador virtual aquí para ayudarte a practicar. ¡Empecemos!",
+    placeholder: "Escribe tu mensaje...",
+    send: "Enviar",
+    title: "Entrevistador Virtual",
+    feedbackPrompt: "¿Cómo fue esta respuesta?",
+    like: "Me gusta",
+    dislike: "No me gusta",
+  },
+  ko: {
+    welcome: "안녕하세요! 연습을 도와드릴 가상 인터뷰어입니다. 시작해 보겠습니다!",
+    placeholder: "메시지를 입력하세요...",
+    send: "보내기",
+    title: "가상 인터뷰어",
+    feedbackPrompt: "이 응답은 어땠나요?",
+    like: "좋아요",
+    dislike: "싫어요",
+  },
+  ar: {
+    welcome: "مرحبًا! أنا المحاور الافتراضي الخاص بك هنا لمساعدتك في التدرب. دعونا نبدأ!",
+    placeholder: "اكتب رسالتك...",
+    send: "إرسال",
+    title: "المحاور الافتراضي",
+    feedbackPrompt: "كيف كانت هذه الاستجابة؟",
+    like: "أعجبني",
+    dislike: "لم يعجبني",
+  },
+  // Add more languages here
 };
+
 
 export default function Home() {
   const [messages, setMessages] = useState([
