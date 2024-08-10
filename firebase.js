@@ -4,14 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { getFirestore } from 'firebase/firestore';
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAcEvi1nEZfeYv0zRqt6PEQu7DyvezgAgA",
-  authDomain: "chat-support-cabc4.firebaseapp.com",
-  projectId: "chat-support-cabc4",
-  storageBucket: "chat-support-cabc4.appspot.com",
-  messagingSenderId: "78091973802",
-  appId: "1:78091973802:web:7ffcc5057be0e39c3c0cd3"
-};
+const 
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
