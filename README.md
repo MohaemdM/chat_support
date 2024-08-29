@@ -26,7 +26,9 @@ Clone the repository:
 bash
 Copy code
 git clone https://github.com/MohaemdM/chat_support.git
+
 cd chat_support
+
 Install dependencies:
 bash
 Copy code
